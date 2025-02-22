@@ -1,11 +1,10 @@
-// D:\MBA\project_crypto\backend\api\export.js
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { Parser } from 'json2csv';
 
-// Load surveys from JSON file
 const surveysFile = resolve('surveys.json');
 let surveys = [];
+
 try {
   const data = readFileSync(surveysFile, 'utf8');
   surveys = JSON.parse(data);
@@ -31,12 +30,10 @@ export default function handler(req, res) {
       { label: 'Section', value: 'section' }
     ];
 
-    // Collect all unique questions across all surveys
     const allQuestions = [...new Set(surveys.flatMap(survey => 
       survey.answers.map(answer => answer.question)
     ))];
 
-    // Add fields for each unique question
     allQuestions.forEach(question => {
       fields.push({
         label: question,

@@ -59,7 +59,7 @@ function SurveyForm() {
 
     setIsSubmitting(true);
     try {
-      await axios.post('https://your-project-vercel-url/api/submit', formData);
+      await axios.post('https://project-crypto-ecru.vercel.app/api/submit', formData);
       alert('Survey submitted successfully!');
       setFormData({
         name: '',
