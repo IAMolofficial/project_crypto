@@ -59,9 +59,8 @@ function SurveyForm() {
 
     setIsSubmitting(true);
     try {
-      await axios.post('http://localhost:5000/api/submit', formData);
+      await axios.post('https://your-project-vercel-url/api/submit', formData);
       alert('Survey submitted successfully!');
-      // Optionally reset the form
       setFormData({
         name: '',
         email: '',
