@@ -1,0 +1,326 @@
+/* Reset default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Clean, modern font; add <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> in HTML or import in React */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Soft gradient background (light gray-blue to pastel blue) */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Survey container for overall layout */
+.survey-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Title styling for vibrant, minimal look */
+.survey-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff; /* White text for contrast with gradient */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(45deg, #4a90e2, #50c878); /* Vibrant gradient (blue to green) */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Form styling */
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Footer styling */
+.survey-footer {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff; /* White text for contrast with gradient */
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(45deg, #4a90e2, #50c878); /* Vibrant gradient (blue to green) */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form inputs and selects */
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #e0e7ff; /* Light pastel blue border */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #f9f9ff; /* Very light pastel blue background */
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  outline: none;
+  border-color: #4a90e2; /* Vibrant blue for focus */
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+/* Labels for questions */
+h4 {
+  font-size: 1.1rem;
+  color: #2c3e50; /* Dark blue-gray for headers */
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+/* Checkbox styling for a minimal, aesthetic look */
+label {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #4a90e2;
+  border-radius: 4px;
+  margin-right: 0.6rem;
+  cursor: pointer;
+  position: relative;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Button styling with vibrant colors */
+button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #ff6b6b; /* Vibrant coral red */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #ff4040; /* Darker coral red on hover */
+  transform: translateY(-2px);
+}
+
+/* Disabled state for inputs and selects */
+input:disabled,
+select:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Responsive design for all screen sizes */
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .survey-container {
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .survey-title {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .survey-footer {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    margin-top: 1rem;
+  }
+
+  form {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  button {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .survey-container {
+    max-width: 600px;
+    padding: 0 1.5rem;
+  }
+
+  .survey-title {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .survey-footer {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+
+  form {
+    padding: 1.8rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  button {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .survey-container {
+    max-width: 480px;
+    padding: 0 2rem;
+  }
+
+  .survey-title {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .survey-footer {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+
+  form {
+    padding: 2rem;
+  }
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+  .survey-container {
+    max-width: 480px;
+    padding: 0 2rem;
+  }
+
+  .survey-title {
+    font-size: 1.6rem;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .survey-footer {
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+  }
+
+  form {
+    padding: 2.2rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  button {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Alert styling (optional, for error/success messages if added) */
+.alert {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
